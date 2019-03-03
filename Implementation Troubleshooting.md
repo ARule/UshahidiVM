@@ -1,30 +1,30 @@
-# Issue accessing Ushahidi in the VM #
+# Issue Accessing Ushahidi in the VM #
 
-  These instructions follow Step 16 in the Ushahidi VM Installation
-  Error states: “Sorry, something went wrong. Try reloading the page.”
-  
-1. Go into Applications > System Tools > MATE Terminal
-2. If not already, change directory ‘cd’ into platform-client
-3. Look at the contents of this directory using the command ‘ls -a’. 
-    3. This command is different than ‘ls’ because it shows hidden files and folders
+  **These instructions follow Step 16 in the Ushahidi VM Installation.
+  Error states: “Sorry, something went wrong. Try reloading the page.”**
 
-
-Look in the .env file using the command ‘cat .env’
-Look at the backend URL. This URL must match up with IP address in the network connection settings. Follow step 13 to find this URL
-If the backend url doesn't match the IP address, then the backend needs to be edited
-To edit the .env use the command ‘pluma .env’. This will open up a simple text editor to change the address. Edit the first backend url to match and save
-
-
-Run ‘cat .env’ to ensure that it saved
-Run the command ‘ifconfig’
-Look at enpos8’s inet address 
-It should match with the IP address in the network connection settings within the VM (dual arrows)- This is the area that you looked at in step 13b.
-If not, the .env file will need to be edited. Use ‘pluma .env’ to edit the first backend URL. 
-Example:It should say 192.168.56.101
-Save & Edit the .env file
-Run ‘cat .env’ again to ensure it was saved once more
-Now use ‘npm run watch’ command
-NOTE: ‘Npm run watch’ command runs scripts from package.json when files change
-Pick back up with Step 12 and run through the rest of the instructions found on GitHub
-
-
+1. Go into Applications > System Tools > MATE Terminal 
+1. Change the directory from ‘cd’ to platform-client
+1. Use ‘ls -a’ command to peruse directory contents
+    1. ‘ls -a’ shows hidden files and folders
+1. Use ‘cat .env’ command
+    1. Allows user to find .env file
+    1. Look at the backend URL. 
+        1. This URL must match up with IP address in the network connection settings. **Follow step 13 to find this URL**
+        1. If the backend url doesn't match the IP address, then the backend needs to be edited
+        1. To edit the .env use the command ‘pluma .env’. This will open up a simple text editor to change the address. Edit the first backend url to match and save
+1. Run ‘cat .env’ to ensure that it saved
+1. Run ‘ifconfig’ command to verify that either two addresses below match up
+    1. Enpos3 - inet address
+    1. Enpos8 - inet address
+1. Run ‘pluma .env’ command
+    1. This will open up a simple text editor to change the address if there is a discrepancy 
+1. Edit backend URL (1st one) 
+    1. What URL should be: 192.168.56.101
+1. Save the edit
+1. Run cat .env in terminal again to ensure it is correct/saved
+1. In MATE Terminal:  run Gulp/npm commands to organize Javascript
+1. Run ‘npm run watch’ command
+    1. NOTE: Should be consistent with current step 12 now
+    1. Two URLS should be present
+    1. To use local URL - click it
